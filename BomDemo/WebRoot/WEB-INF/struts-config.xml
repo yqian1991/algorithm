@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="insertForm" type="org.qianyu.dtree.struts.form.InsertForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="insertForm"
+      input="/form/insert.jsp"
+      name="insertForm"
+      parameter="status"
+      path="/insert"
+      scope="request"
+      type="org.qianyu.dtree.struts.action.InsertAction">
+      <forward name="deletedo" path="/delete_do.jsp"></forward>
+      <forward name="insert" path="/insert.jsp"></forward>
+      <forward name="insertdo" path="/delete_do.jsp"></forward>
+      <forward name="update" path="/update.jsp"></forward>
+      <forward name="updatedo" path="/delete_do.jsp"></forward>
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="org.qianyu.dtree.struts.ApplicationResources" />
+</struts-config>
+
